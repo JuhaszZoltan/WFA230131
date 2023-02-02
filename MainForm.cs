@@ -2,8 +2,9 @@ namespace WFA230131
 {
     public partial class MainForm : Form
     {
-        public HomeUserControl homeUserControl { get; set; }
-        public ImagesUserControl imagesUserControl { get; set; }
+        public HomeUserControl HomeUserControl { get; set; }
+        public ImagesUserControl ImagesUserControl { get; set; }
+        public ColorUserControl ColorUserControl { get; set; }
         public UserControl ActiveControl { get; set; } = null;
 
         public MainForm()
@@ -20,19 +21,20 @@ namespace WFA230131
 
         private void OnHomeToolStripMenuItemClick(object? sender, EventArgs e)
         {
-            homeUserControl = new();
-            SetActiveControl(homeUserControl);
+            HomeUserControl = new();
+            SetActiveControl(HomeUserControl);
         }
 
         private void OnImagesToolStripMenuItemClick(object? sender, EventArgs e)
         {
-            imagesUserControl = new();
-            SetActiveControl(imagesUserControl);
+            ImagesUserControl = new();
+            SetActiveControl(ImagesUserControl);
         }
 
         private void OnColorToolStripMenuItemClick(object? sender, EventArgs e)
         {
-            throw new NotImplementedException("TODO");
+            ColorUserControl = new(this);
+            SetActiveControl(ColorUserControl);
         }
 
         private void SetActiveControl(UserControl us)

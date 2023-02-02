@@ -113,6 +113,6 @@
         private ToolStripMenuItem homeToolStripMenuItem;
         private ToolStripMenuItem colorToolStripMenuItem;
         private ToolStripMenuItem imagesToolStripMenuItem;
-        private Panel mainPanel;
+        public Panel mainPanel;
     }
 }
