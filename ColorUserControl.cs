@@ -19,7 +19,18 @@ namespace WFA230131
             InitializeComponent();
             MainForm = mainForm;
             changeColorButton.Click += OnChangeColorButtonClick;
-            
+            redTrackBar.ValueChanged += OnColorTrackBarValueChanged;
+            greenTrackBar.ValueChanged += OnColorTrackBarValueChanged;
+            blueTrackBar.ValueChanged += OnColorTrackBarValueChanged;
+
+        }
+
+        private void OnColorTrackBarValueChanged(object? sender, EventArgs e)
+        {
+            changeColorButton.BackColor = Color.FromArgb(
+                red: redTrackBar.Value,
+                green: greenTrackBar.Value,
+                blue: blueTrackBar.Value);
         }
 
         private void OnChangeColorButtonClick(object? sender, EventArgs e)
